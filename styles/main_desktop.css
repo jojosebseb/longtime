@@ -24,10 +24,6 @@
   margin: auto;
 }
 
-body {
-  background-image: url("../img/pattern-background.jpg");
-}
-
 .logo-container {
   padding-left: 15px;
   font-family: ClearBold;
@@ -43,12 +39,15 @@ body {
   opacity: 0.7;
   text-align: left;
   padding: 0;
-  width: 100%;
+  width: 200px;
+  display: inline-block;
+  padding-left: 5px;
 }
 
 .logo-container img {
   vertical-align: middle;
   padding-right: 10px;
+  width: 55px;
 }
 
 #navbar {
@@ -123,6 +122,7 @@ body {
 
 #navbar .bottom ul {
   display: flex;
+  position: relative;
 }
 
 #navbar .bottom ul li a {
@@ -139,6 +139,36 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
+#navbar .bottom ul li:hover .sub-menu {
+  display: block;
+}
+
+#navbar ul.sub-menu {
+  background: #061620;
+  color: white;
+  position: absolute;
+  flex-wrap: wrap;
+  width: 170px;
+  top: 50px;
+  display: none;
+}
+
+#navbar ul.sub-menu li {
+  width: 100%;
+}
+
+#navbar ul.sub-menu li a {
+  font-family: ClearReg;
+  text-transform: capitalize;
+  height: 40px;
+  line-height: 40px;
+}
+
+#navbar ul.sub-menu li:hover {
+  background: none;
+  color: #3c6681;
+}
+
 #parentContainer {
   position: relative;
   padding-top: 122px;
@@ -151,7 +181,7 @@ body {
 
 .white-section {
   background: white;
-  width: 1200px;
+  width: 1150px;
   margin: auto;
   padding: 0 50px 50px;
 }
@@ -533,6 +563,53 @@ body {
   flex-wrap: wrap;
 }
 
+#productDetail .filter-group {
+  border: 1px solid #ddd;
+  margin-right: 20px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  max-height: 43px;
+  overflow: hidden;
+  transition: all .5s linear;
+}
+
+#productDetail .filter-group .filter-handle {
+  font-family: ClearBold;
+  text-transform: uppercase;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+#productDetail .filter-group .filter-handle:after {
+  content: "+";
+  position: absolute;
+  right: 10px;
+}
+
+#productDetail .filter-group .filter-options {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+#productDetail .filter-group .filter-options li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+#productDetail .filter-group.active {
+  max-height: 1000px;
+}
+
+#productDetail .filter-group.active .filter-handle:after {
+  content: "-";
+  position: absolute;
+  right: 10px;
+}
+
 #productDetail .product-thumbnail {
   width: 35%;
   padding: 30px 0;
@@ -670,7 +747,6 @@ body {
 }
 
 .product-highlights {
-  border-top: 1px solid #555;
   width: 100%;
   margin-top: 50px;
 }
@@ -678,43 +754,59 @@ body {
 .product-highlights .highlight-flex {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
   margin: auto;
   position: relative;
   top: -41px;
 }
 
 .product-highlights .highlight-flex .flex-module {
-  padding: 10px 20px;
-  border: 1px solid #aaa;
-  border-bottom: 1px solid #555;
+  padding: 10px 10px;
+  border: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
   font-size: 14px;
-  background: #aaa;
-  color: white;
-  margin-right: 5px;
+  background: #fff;
+  margin-right: -1px;
+  color: #888;
   cursor: pointer;
   text-align: center;
-  width: 180px;
+  width: 160px;
   transition: all .3s ease;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .product-highlights .highlight-flex .flex-module.active {
-  background: white;
-  border: 1px solid #555;
+  background: #d7d7d7;
+  border: 1px solid #d7d7d7;
   color: black;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #d7d7d7;
 }
 
 .product-highlights .highlight-flex .highlight-container {
   width: 100%;
-  padding: 20px 10px;
+  padding: 30px 10px;
   display: none;
   font-size: 14px;
   margin-bottom: 20px;
+  margin-top: -1px;
+  border: 1px solid #d7d7d7;
 }
 
 .product-highlights .highlight-flex .highlight-container.active {
   display: block;
+}
+
+.spec-group {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border-bottom: 1px solid #ddd;
+  margin: 0 10px;
+}
+
+.spec-group .spec-caption {
+  min-width: 120px;
 }
 
 .w25 {
@@ -917,4 +1009,316 @@ body {
 
 #promotion .promotion-module:hover .hover-tint {
   opacity: 1;
+}
+
+#newsList, #videoList {
+  min-height: 80vh;
+  padding: 10px;
+}
+
+#newsList .flex, #videoList .flex {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  flex-wrap: wrap;
+}
+
+#newsList .flex-module, #videoList .flex-module {
+  display: flex;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+#newsList .flex-module .image-box, #videoList .flex-module .image-box {
+  width: 50%;
+}
+
+#newsList .flex-module .image-box img, #videoList .flex-module .image-box img {
+  width: 100%;
+  display: block;
+}
+
+#newsList .flex-module .desc, #videoList .flex-module .desc {
+  font-family: ClearBold;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  width: 50%;
+  color: #063350;
+}
+
+#newsList .flex-module .desc .date, #videoList .flex-module .desc .date {
+  font-family: ClearReg;
+  opacity: 0.6;
+  color: black;
+}
+
+#newsDetail {
+  padding: 10px;
+  min-height: 80vh;
+  padding-bottom: 200px;
+}
+
+#newsDetail .date {
+  text-align: center;
+  opacity: 0.8;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+#newsDetail .news-banner {
+  padding: 30px 0;
+  width: 85%;
+  margin: auto;
+}
+
+#newsDetail .news-banner img {
+  display: block;
+  width: 100%;
+}
+
+#newsDetail .paragraph {
+  width: 75%;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.86);
+  text-align: justify;
+}
+
+#newsDetail .paragraph img {
+  display: block;
+  margin: 10px 0 0;
+}
+
+#map {
+  min-height: 400px;
+  background: black;
+}
+
+textarea {
+  font-family: Inherit;
+}
+
+#contactUs {
+  padding: 10px;
+  min-height: 80vh;
+  padding-bottom: 100px;
+}
+
+#contactUs .contact-flex {
+  padding-top: 40px;
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+#contactUs .title {
+  font-family: ClearBold;
+  font-size: 20px;
+  color: #063350;
+}
+
+#contactUs .left {
+  width: 60%;
+  padding-right: 10%;
+}
+
+#contactUs .form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#contactUs .form-container .group {
+  position: relative;
+  width: 100%;
+}
+
+#contactUs .form-container .group .floating-placeholder {
+  font-size: 13px;
+  color: #aaa;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  transition: all .3s ease;
+}
+
+#contactUs .form-container .group .floating-placeholder.active {
+  font-size: 8px;
+  top: 2px;
+}
+
+#contactUs .form-container .full-input {
+  background: #fff;
+  border: 1px solid #aaa;
+  width: 100%;
+  margin: 5px 0;
+  padding: 17px 15px 10px;
+  outline: none;
+  border-radius: 5px;
+}
+
+#contactUs .form-container .full-submit {
+  background: #063350;
+  width: 100%;
+  margin: 5px 0;
+  padding: 15px 15px;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+#contactUs .group {
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 23px;
+}
+
+#contactUs .group .title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#about {
+  padding: 30px 0;
+  background-image: url("../img/dummy/dummy-9.png");
+}
+
+#about .section-title {
+  background: none;
+  color: white;
+}
+
+#about .paragraph {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  opacity: 0.87;
+  padding: 20px 0;
+}
+
+#vision {
+  padding: 40px 0;
+}
+
+#vision .section-title {
+  font-size: 16px;
+}
+
+#vision .vision-flex {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+#vision .vision-flex .flex-module {
+  width: 310px;
+  height: 310px;
+  background: red;
+  border-radius: 50%;
+  margin: 0 -20px;
+  position: relative;
+  transition: all .4s ease;
+  color: white;
+  cursor: pointer;
+}
+
+#vision .vision-flex .flex-module .ring {
+  width: 85%;
+  height: 85%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  padding: 20% 8%;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#vision .vision-flex .flex-module .ring .title {
+  font-family: ClearBold;
+  opacity: 0.7;
+  width: 100%;
+}
+
+#vision .vision-flex .flex-module .ring .paragraph {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+#vision .vision-flex .flex-module.active {
+  z-index: 5;
+}
+
+#vision .vision-flex .red {
+  background: #a92d2a;
+  text-align: right;
+}
+
+#vision .vision-flex .blue {
+  background: #273393;
+}
+
+#vision .vision-flex .flex-module:hover {
+  z-index: 5;
+}
+
+#vision .vision-flex:hover .flex-module:hover {
+  z-index: 5;
+  opacity: 1;
+}
+
+#proposition {
+  padding: 40px 0;
+  padding-bottom: 150px;
+}
+
+#proposition .section-title {
+  font-size: 16px;
+}
+
+#proposition .flex {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#proposition .flex .flex-module {
+  width: 25%;
+  padding: 20px;
+}
+
+#proposition .flex .flex-module img {
+  display: block;
+  padding-bottom: 20px;
+}
+
+#proposition .flex .top {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#proposition .flex .top .title {
+  font-family: ClearBold;
+  letter-spacing: 0;
+}
+
+#proposition .flex .top:after {
+  content: "";
+  width: 40px;
+  border: 1px solid #ddd;
+  position: absolute;
+  bottom: 9px;
+}
+
+#proposition .flex .paragraph {
+  font-size: 13px;
 }

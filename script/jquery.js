@@ -75,6 +75,34 @@ $('.related-product-belt').slick({
     infinite: false,
     nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
     prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
+    responsive: [
+  {
+    breakpoint: 1025,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
 });
 
 var x = 0;
@@ -100,4 +128,71 @@ $('.highlight-flex').on('click', '.flex-module', function(){
 $('.filter-handle').on('click', function(){
     // $('.filter-handle').parent().removeClass('active');
     $(this).parent().toggleClass('active');
+})
+
+$('#navbar li').on('click', function(){
+    // $('#navbar li').removeClass('active');
+    // $(this).addClass('active');
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+    }
+    else {
+        $('#navbar li').removeClass('active');
+        $(this).addClass('active');
+    }
+})
+$('.mobile-handle').on('click', function(){
+    $(this).toggleClass('active');
+    $('#navbar .right').toggleClass('active');
+})
+
+// $('.vision-flex .red').on('mouseenter', function(){
+//     $(this).animate({
+//             'right': -500
+//         },180
+//     );
+//     $(this).animate({
+//             'right': 0,
+//             'zIndex': 5
+//         },150
+//     );
+// });
+// $('.vision-flex .blue').on('mouseenter', function(){
+//     $(this).animate({
+//             'left': -500
+//         },180
+//     );
+//     $(this).animate({
+//             'left': 0,
+//             'zIndex': 5
+//         },150
+//     );
+// });
+
+// $('.vision-flex .flex-module').on('mouseleave', function(){
+//     $(this).animate({
+//             'zIndex': 4
+//         },400
+//     );
+// });
+
+$('.vision-flex .flex-module').on('mouseenter', function(){
+    $('.vision-flex .flex-module').animate({
+            margin: '0 -50px'
+        },200
+    );
+    $('.vision-flex .flex-module').animate({
+            margin: '0 50px'
+        },200
+    );
+    $('.vision-flex .flex-module').animate({
+            margin: '0 -20px'
+        },200
+    );
+    $('.vision-flex .flex-module').removeClass('active');
+    $(this).addClass('active');
+})
+
+$('.full-input').on('focus', function(){
+    $(this).parent().find('.floating-placeholder').addClass('active');
 })
