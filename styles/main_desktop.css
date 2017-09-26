@@ -75,7 +75,7 @@
 #navbar .language-container {
   display: flex;
   position: absolute;
-  top: -35px;
+  top: -50px;
   right: 15px;
   border: 1px solid white;
   border-top: 0;
@@ -511,7 +511,6 @@
   bottom: 100%;
   display: flex;
   right: 45px;
-  display: none;
 }
 
 #footer .contact-module {
@@ -583,6 +582,7 @@
   font-size: 14px;
   font-family: ClearReg;
   margin: 20px 0 40px;
+  padding-top: 30px;
 }
 
 .breadcrumb .page.active {
@@ -665,7 +665,7 @@
 }
 
 #productDetail .product-thumbnail {
-  width: 35%;
+  width: 40%;
   padding: 30px 0;
 }
 
@@ -692,7 +692,7 @@
 }
 
 #productDetail .product-description {
-  width: 65%;
+  width: 60%;
 }
 
 #productDetail .product-description .top {
@@ -1224,7 +1224,6 @@ textarea {
 #contactUs .group {
   font-size: 14px;
   margin-bottom: 15px;
-  line-height: 23px;
 }
 
 #contactUs .group .title {

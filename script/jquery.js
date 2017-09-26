@@ -177,18 +177,15 @@ $('.mobile-handle').on('click', function(){
 // });
 
 $('.vision-flex .flex-module').on('mouseenter', function(){
-    $('.vision-flex .flex-module').animate({
-            margin: '0 -50px'
-        },200
-    );
-    $('.vision-flex .flex-module').animate({
-            margin: '0 50px'
-        },200
-    );
-    $('.vision-flex .flex-module').animate({
-            margin: '0 -20px'
-        },200
-    );
+    // $('.vision-flex .flex-module').animate({
+    //         margin: '0 -50px'
+    //     },200
+    // );
+    // $('.vision-flex .flex-module').animate({
+    //         margin: '0 50px'
+    //     },200
+    // );
+
     $('.vision-flex .flex-module').removeClass('active');
     $(this).addClass('active');
 })

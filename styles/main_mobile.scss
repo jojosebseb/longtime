@@ -492,7 +492,7 @@ $navbar-height: 122px;
         bottom: 100%;
         display: flex;
         right: 0;
-        display: none;
+        // display: none;
     }
     .contact-module{
         background: #ed1b24;
@@ -1060,7 +1060,6 @@ textarea{
 #contactUs{
     padding: 10px;
     min-height: 80vh;
-    padding-bottom: 100px;
     .contact-flex{
         padding-top: 40px;
         display: flex;
@@ -1080,12 +1079,28 @@ textarea{
     .form-container{
         display: flex;
         flex-wrap: wrap;
+        .group{
+            width: 100%;
+            position: relative;
+            .floating-placeholder{
+                font-size: 13px;
+                color: #aaa;
+                position: absolute;
+                left: 13px;
+                top: 12px;
+                transition: all .3s ease;
+            }
+            .floating-placeholder.active{
+                font-size: 8px;
+                top: 2px;
+            }
+        }
         .full-input{
-            background: #eee;
-            border: 2px solid #aaa;
+            background: #fff;
+            border: 1px solid #aaa;
             width: 100%;
             margin: 5px 0;
-            padding: 10px 15px;
+            padding: 15px 12px 10px;
             outline: none;
             border-radius: 5px;
         }
