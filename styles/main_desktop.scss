@@ -28,7 +28,7 @@ $container-width: 1200px;
     width: $container-width;
     margin: auto;
 }
-$navbar-height: 122px;
+$navbar-height: 142px;
 //pallette
 body{
     // background-image: url('../img/pattern-background.jpg');
@@ -63,7 +63,7 @@ body{
 }
 #navbar{
     background-color: $main-blue;
-    padding: 15px 0;
+    padding: 35px 0 15px;
     border-bottom: 5px solid $main-red;
     color: white;
     font-family: ClearReg;
@@ -79,8 +79,19 @@ body{
     .language-container{
         display: flex;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -35px;
+        right: 15px;
+        border: 1px solid white;
+        border-top: 0;
+        .lang-choice{
+            padding: 8px 15px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .lang-choice.active{
+            background: white;
+            color: $main-blue
+        }
     }
     .search-group{
         display: flex;
@@ -102,6 +113,11 @@ body{
         height: 37px;
         width: 290px;
         outline: none;
+    }
+    .cart-button{
+        padding: 8px 0;
+        padding-left: 20px;
+        cursor: pointer;
     }
     .nav-submit{
         background: #061620;
@@ -132,6 +148,7 @@ body{
         ul{
             display: flex;
             position: relative;
+            justify-content: flex-end;
             li{
                 a{
                     text-transform: uppercase;
@@ -272,8 +289,10 @@ body{
             font-family: ClearBold;
             padding: 15px 15px 40px;
             border-radius: 3px;
-            transition: opacity 1.3s ease;
+            transition: opacity 1.3s ease, top 1.3s ease;;
             opacity: 0.0;
+            position: relative;
+
             .product-image{
                 margin-bottom: 20px;
                 position: relative;
@@ -313,6 +332,7 @@ body{
         }
         .product-module.slick-active{
             opacity: 1;
+            top: 0;
         }
         .product-module:hover{
             border: 1px solid #555;
@@ -432,8 +452,13 @@ body{
     background: $main-blue;
     border-top: 10px solid $main-red;
     position: relative;
-    color: white;
+    color: rgba(255,255,255,0.8);
     font-family: ClearReg;
+    .menu{
+        li:hover{
+            color: rgba(250,250,250,0.4);
+        }
+    }
     .logo-container{
         padding-left: 0;
     }
@@ -445,7 +470,8 @@ body{
         position: absolute;
         bottom: 100%;
         display: flex;
-        right: 45px    ;
+        right: 45px;
+        display: none;
     }
     .contact-module{
         background: #ed1b24;
@@ -465,6 +491,12 @@ body{
         justify-content: space-between;
 
         padding: 30px 0;
+        font-size: 13px;
+        ul{
+            li{
+                padding: 2px 0;
+            }
+        }
         .contacts{
             font-size: 13px;
         }
@@ -472,6 +504,14 @@ body{
             font-family: ClearBold;
             margin-bottom: 15px;
             font-size: 15px;
+        }
+        .flex-map{
+            width: 40%;
+            padding: 30px 0;
+            img{
+                width: 100%;
+                display: block;
+            }
         }
     }
 

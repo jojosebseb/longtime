@@ -56,7 +56,7 @@
 
 #navbar {
   background-color: #063350;
-  padding: 15px 0;
+  padding: 35px 0 15px;
   border-bottom: 5px solid #ed1b24;
   color: white;
   font-family: ClearReg;
@@ -75,8 +75,21 @@
 #navbar .language-container {
   display: flex;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -35px;
+  right: 15px;
+  border: 1px solid white;
+  border-top: 0;
+}
+
+#navbar .language-container .lang-choice {
+  padding: 8px 15px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#navbar .language-container .lang-choice.active {
+  background: white;
+  color: #063350;
 }
 
 #navbar .search-group {
@@ -101,6 +114,12 @@
   height: 37px;
   width: 290px;
   outline: none;
+}
+
+#navbar .cart-button {
+  padding: 8px 0;
+  padding-left: 20px;
+  cursor: pointer;
 }
 
 #navbar .nav-submit {
@@ -135,6 +154,7 @@
 #navbar .bottom ul {
   display: flex;
   position: relative;
+  justify-content: flex-end;
 }
 
 #navbar .bottom ul li a {
@@ -183,7 +203,7 @@
 
 #parentContainer {
   position: relative;
-  padding-top: 122px;
+  padding-top: 142px;
   font-family: ClearReg;
 }
 
@@ -285,8 +305,9 @@
   font-family: ClearBold;
   padding: 15px 15px 40px;
   border-radius: 3px;
-  transition: opacity 1.3s ease;
+  transition: opacity 1.3s ease, top 1.3s ease;
   opacity: 0.0;
+  position: relative;
 }
 
 #indexLatest .latest-product-belt .product-module .product-image {
@@ -333,6 +354,7 @@
 
 #indexLatest .latest-product-belt .product-module.slick-active {
   opacity: 1;
+  top: 0;
 }
 
 #indexLatest .latest-product-belt .product-module:hover {
@@ -467,8 +489,12 @@
   background: #063350;
   border-top: 10px solid #ed1b24;
   position: relative;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   font-family: ClearReg;
+}
+
+#footer .menu li:hover {
+  color: rgba(250, 250, 250, 0.4);
 }
 
 #footer .logo-container {
@@ -485,6 +511,7 @@
   bottom: 100%;
   display: flex;
   right: 45px;
+  display: none;
 }
 
 #footer .contact-module {
@@ -505,6 +532,11 @@
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  font-size: 13px;
+}
+
+#footer .footer-flex ul li {
+  padding: 2px 0;
 }
 
 #footer .footer-flex .contacts {
@@ -515,6 +547,16 @@
   font-family: ClearBold;
   margin-bottom: 15px;
   font-size: 15px;
+}
+
+#footer .footer-flex .flex-map {
+  width: 40%;
+  padding: 30px 0;
+}
+
+#footer .footer-flex .flex-map img {
+  width: 100%;
+  display: block;
 }
 
 #footer .copyright {

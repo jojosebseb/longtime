@@ -10,7 +10,7 @@ $('.news-belt').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
-      dots: true
+    //   dots: true
     }
   },
   {
@@ -46,7 +46,7 @@ $('.latest-product-belt').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
       infinite: true,
-      dots: true
+    //   dots: true
     }
   },
   {
@@ -82,7 +82,7 @@ $('.related-product-belt').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
       infinite: true,
-      dots: true
+    //   dots: true
     }
   },
   {
