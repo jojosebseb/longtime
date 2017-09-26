@@ -58,6 +58,9 @@ body{
         width: 55px;
     }
 }
+.mobile-handle{
+    display: none;
+}
 #navbar{
     background-color: $main-blue;
     padding: 15px 0;
@@ -71,8 +74,14 @@ body{
     .container{
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
-
+    .language-container{
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
     .search-group{
         display: flex;
     }

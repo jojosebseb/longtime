@@ -50,6 +50,10 @@
   width: 55px;
 }
 
+.mobile-handle {
+  display: none;
+}
+
 #navbar {
   background-color: #063350;
   padding: 15px 0;
@@ -65,6 +69,14 @@
 #navbar .container {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+#navbar .language-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #navbar .search-group {
