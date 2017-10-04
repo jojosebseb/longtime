@@ -193,3 +193,26 @@ $('.vision-flex .flex-module').on('mouseenter', function(){
 $('.full-input').on('focus', function(){
     $(this).parent().find('.floating-placeholder').addClass('active');
 })
+
+var tempVar;
+
+$('#videoFlex > .flex-module').on('click', function(){
+    joPopup();
+    tempVar = $(this).find('.content').html();
+    console.log(tempVar);
+    $('#jo-popup').find('.content-container').append(tempVar);
+
+});
+
+$('#jo-popup > .fader').on('click', function(){
+    joPopup();
+    $('#jo-popup').find('.content-container').empty();
+})
+
+function joPopup(){
+    $('#jo-popup').toggleClass('active');
+}
+
+$('.filter-parent-handle').on('click', function(){
+    $(this).parent().toggleClass('active');
+})
