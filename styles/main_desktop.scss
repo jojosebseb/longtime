@@ -284,10 +284,11 @@ body{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        padding: 20px 0;
         .flex-module{
             position: relative;
-            width: 170px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             transition: all .3s ease;
             cursor: pointer;
             img{
@@ -296,6 +297,7 @@ body{
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                max-height: 100%;
             }
         }
         .flex-module:hover{
@@ -313,7 +315,7 @@ body{
 }
 
 #indexLatest{
-    margin-top: 50px;
+    margin-top: 10px;
     .latest-product-belt{
         display: flex;
         flex-wrap: wrap;
@@ -324,22 +326,27 @@ body{
             margin: 0 10px;
             border: 1px solid #ccc;
             font-family: ClearBold;
-            padding: 15px 15px 40px;
+            padding: 10px 10px 40px;
             border-radius: 3px;
             transition: opacity 1.3s ease, top 1.3s ease;;
             opacity: 0.0;
             position: relative;
-
             .product-image{
                 margin-bottom: 20px;
                 position: relative;
                 overflow: hidden;
+                height: 200px;
             }
             img{
                 display: block;
                 margin: auto;
-                width: 100%;
                 transition: all .3s ease;
+                position: absolute;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
             .zoom{
                 height: 40px;
@@ -375,7 +382,7 @@ body{
             border: 1px solid #555;
             img{
                 // opacity: 0.4;
-                transform: scale(1.1);
+                transform: translate(-50%, -50%) scale(1.1);
             }
             .zoom{
                 opacity: 1;
@@ -407,13 +414,18 @@ body{
             border: 5px solid white;
             .news-image{
                 overflow: hidden;
+                height: 255px;
+                position: relative;
             }
             img{
                 display: block;
-                width: 100%;
                 transition: all .3s ease;
                 position: relative;
-                transform: scale(1.1);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
             }
             .news-title{
                 font-family: ClearBold;
@@ -431,7 +443,7 @@ body{
         }
         .news-module:hover{
             img{
-                transform: scale(1);
+                transform: translate(-50%, -50%) scale(1.1);
             }
         }
     }
@@ -612,6 +624,13 @@ body{
         display: flex;
         flex-wrap: wrap;
     }
+    .brand-logo{
+        width: 100px;
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
     .filter-group{
         border: 1px solid #ddd;
         margin-right: 20px;
@@ -665,7 +684,7 @@ body{
             padding: 30px 0;
             .product-box{
                 width: 50px;
-                height: 50px;
+                // height: 50px;
                 border: 1px solid #ddd;
                 padding: 10px;
                 margin-right: 5px;
@@ -967,14 +986,14 @@ body{
         text-align: center;
         margin-top: 50px;
         .brand-module{
-            height: 110px;
+            /* height: 110px; */
             width: 110px;
             border: 1px solid #eee;
             position: relative;
             text-align: center;
             align-items: center;
             align-content: center;
-            padding: 3.5% 0;
+            padding: 0.5%;
             img{
                 display: block;
                 margin: auto;
@@ -1319,6 +1338,137 @@ textarea{
         .paragraph{
             font-size: 13px;
             // padding-right: 30px;
+        }
+    }
+}
+
+#inquiryParent{
+    padding-top: 40px;
+    font-family: ClearReg;
+    .section-title{
+        text-align: left;
+        width: 100%;
+    }
+    .table-parent{
+        padding-bottom: 40px;
+        .table-flex{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+        }
+        .table-flex.header{
+            font-family: ClearBold;
+            text-transform: uppercase;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            color: $main-blue;
+        }
+        .table-flex:last-child{
+            border-bottom: 0;
+        }
+    }
+    .table-parent.no-border{
+        .table-flex{
+            border-bottom: 0;
+        }
+        .table-flex.header{
+            border: 1px solid #ccc;
+        }
+        .table-flex:last-child{
+            border-top: 1px solid #ccc;
+        }
+    }
+    .delete-icon{
+        width: 40px;
+    }
+    .product-quantity{
+        width: 10%;
+    }
+    .product-notes{
+        width: 30%;
+    }
+    .subcaption{
+        font-family: ClearReg;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+    .caption{
+        width: 35%;
+        font-family: ClearBold;
+
+    }
+    .full-input{
+        background: #eee;
+        width: 100%;
+        resize: vertical;
+        border: 1px solid #ddd;
+        outline: none;
+        padding: 10px;
+    }
+    .full-input.success{
+        background: #e2efd5;
+        border: 1px solid #5f953c;
+    }
+    .full-input.failed{
+        background: #f5d8d8;
+        border: 1px solid #c34545;
+    }
+    .number-field{
+        background: white;
+        border: 1px solid #aaa;
+        padding: 0 5px;
+        height: 35px;
+        min-width: 60px;
+        width: 60px;
+        max-width: 100px;
+        outline: none;
+    }
+    .inquiry-button{
+        background: $main-red;
+        color: white;
+        font-family: ClearBold;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    .caption{
+        .upload{
+
+        }
+    }
+    .group{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .grey-button{
+            background: #333;
+            border-radius: 3px;
+            color: white;
+            padding: 8px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 12px;
+
+        }
+        .full-input{
+            width: 35%;
+            display: inline-block;
+        }
+    }
+    .product-container{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        img{
+            max-width: 100px;
+        }
+        .desc{
+            padding-left: 20px;
+            font-family: ClearBold;
+            .brand{
+                color: $main-red;
+            }
         }
     }
 }
