@@ -216,3 +216,7 @@ function joPopup(){
 $('.filter-parent-handle').on('click', function(){
     $(this).parent().toggleClass('active');
 })
+
+$('.partner-flex').on('click', function(){
+    $(this).toggleClass('active');
+})

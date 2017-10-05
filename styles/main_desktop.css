@@ -301,6 +301,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px 0;
+  overflow: hidden;
+  max-height: 176px;
+  transition: all .3s ease;
 }
 
 #partnerSection .partner-flex .flex-module {
@@ -317,11 +320,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 100%;
+  max-height: 80%;
 }
 
 #partnerSection .partner-flex .flex-module:hover {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#partnerSection .partner-flex.active {
+  max-height: 950px;
 }
 
 .wing-line {
@@ -761,7 +768,7 @@
 #productDetail .product-thumbnail .product-grid .product-box {
   width: 50px;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 5px;
   margin-right: 5px;
   cursor: pointer;
 }
