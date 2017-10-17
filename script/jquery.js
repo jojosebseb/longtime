@@ -126,13 +126,10 @@ $('.highlight-flex').on('click', '.flex-module', function(){
 });
 
 $('.filter-handle').on('click', function(){
-    // $('.filter-handle').parent().removeClass('active');
     $(this).parent().toggleClass('active');
 })
 
 $('#navbar li').on('click', function(){
-    // $('#navbar li').removeClass('active');
-    // $(this).addClass('active');
     if ($(this).hasClass('active')) {
         $(this).removeClass('active');
     }
@@ -140,59 +137,20 @@ $('#navbar li').on('click', function(){
         $('#navbar li').removeClass('active');
         $(this).addClass('active');
     }
-})
+});
 $('.mobile-handle').on('click', function(){
     $(this).toggleClass('active');
     $('#navbar .right').toggleClass('active');
-})
-
-// $('.vision-flex .red').on('mouseenter', function(){
-//     $(this).animate({
-//             'right': -500
-//         },180
-//     );
-//     $(this).animate({
-//             'right': 0,
-//             'zIndex': 5
-//         },150
-//     );
-// });
-// $('.vision-flex .blue').on('mouseenter', function(){
-//     $(this).animate({
-//             'left': -500
-//         },180
-//     );
-//     $(this).animate({
-//             'left': 0,
-//             'zIndex': 5
-//         },150
-//     );
-// });
-
-// $('.vision-flex .flex-module').on('mouseleave', function(){
-//     $(this).animate({
-//             'zIndex': 4
-//         },400
-//     );
-// });
+});
 
 $('.vision-flex .flex-module').on('mouseenter', function(){
-    // $('.vision-flex .flex-module').animate({
-    //         margin: '0 -50px'
-    //     },200
-    // );
-    // $('.vision-flex .flex-module').animate({
-    //         margin: '0 50px'
-    //     },200
-    // );
-
     $('.vision-flex .flex-module').removeClass('active');
     $(this).addClass('active');
-})
+});
 
 $('.full-input').on('focus', function(){
     $(this).parent().find('.floating-placeholder').addClass('active');
-})
+});
 
 var tempVar;
 
@@ -207,7 +165,7 @@ $('#videoFlex > .flex-module').on('click', function(){
 $('#jo-popup > .fader').on('click', function(){
     joPopup();
     $('#jo-popup').find('.content-container').empty();
-})
+});
 
 function joPopup(){
     $('#jo-popup').toggleClass('active');
@@ -215,8 +173,16 @@ function joPopup(){
 
 $('.filter-parent-handle').on('click', function(){
     $(this).parent().toggleClass('active');
-})
+});
 
 $('.partner-flex').on('click', function(){
     $(this).toggleClass('active');
-})
+});
+
+var tempVar;
+
+$('#productDetail .product-box img').on('click', function(){
+    tempVar = $(this).attr('src');
+    console.log(tempVar);
+    $('#productDetail .product-preview img').attr('src', tempVar)
+});
