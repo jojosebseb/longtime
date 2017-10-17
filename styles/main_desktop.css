@@ -264,6 +264,16 @@
   width: 100%;
 }
 
+#indexSlider .arrow-container.next {
+  right: 35px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#indexSlider .arrow-container.prev {
+  left: 35px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
 #indexSlider .slide-items {
   background-size: cover;
   background-position: center center;

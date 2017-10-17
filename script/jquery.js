@@ -105,6 +105,42 @@ $('.related-product-belt').slick({
 ]
 });
 
+$('#indexSlider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
+    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
+    responsive: [
+  {
+    breakpoint: 1025,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+    //   dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
+});
+
 var x = 0;
 $('.latest-product-belt .product-module').each(function(i){
     x++;
