@@ -60,7 +60,9 @@ $('.latest-product-belt').slick({
     breakpoint: 480,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
     }
   }
   // You can unslick at a given breakpoint now by adding:
@@ -69,7 +71,7 @@ $('.latest-product-belt').slick({
 ]
 });
 
-$('.related-product-belt').slick({
+$('.related-product-belt.slick').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     infinite: false,
@@ -82,21 +84,26 @@ $('.related-product-belt').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
       infinite: true,
-    //   dots: true
+      dots: true,
+      arrows: false,
     }
   },
   {
     breakpoint: 600,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
     }
   },
   {
     breakpoint: 480,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
     }
   }
   // You can unslick at a given breakpoint now by adding:
@@ -105,12 +112,59 @@ $('.related-product-belt').slick({
 ]
 });
 
-$('#indexSlider').slick({
+var slideWidth = $('#indexSlider .slider-bar').width();
+
+var winWidth = $(window).width();
+
+console.log(
+    winWidth
+);
+
+console.log(slideWidth);
+// window.setInterval(function(){
+//     if (slideWidth >= winWidth) {
+//         slideWidth= 0;
+//     }
+//     else {
+//         $('#indexSlider .slider-bar').css({
+//             width: slideWidth+1 +'px'
+//         });
+//         slideWidth = $('#indexSlider .slider-bar').width();
+//     }
+// }, 100);
+
+function timer(){
+    $('.slider-bar').animate({
+        width: '100%'
+    }, 5000, function(){
+        timerReset()
+    });
+};
+function timerReset(){
+    $('#indexSlider > .slider-container').slick('slickNext');
+    $('.slider-bar').animate({
+        width: '0%'
+    }, 0, function(){
+        timer();
+    });
+}
+timer();
+
+// window.setInterval(function(){
+//     $('.slider-bar').removeClass('full');
+//     $('.slider-bar').addClass('full');
+// }, 2000);
+
+$('#indexSlider > .slider-container').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: false,
+    infinite: true,
+    // fade: true,
     nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
     prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
+    // autoplay: true,
+    // autoplaySpeed: 1600,
+    cssEase: 'ease-out',
     responsive: [
   {
     breakpoint: 1025,
@@ -165,7 +219,8 @@ $('.filter-handle').on('click', function(){
     $(this).parent().toggleClass('active');
 })
 
-$('#navbar li').on('click', function(){
+$('#navbar li').on('click', function(e){
+    // e.preventDefault();
     if ($(this).hasClass('active')) {
         $(this).removeClass('active');
     }
@@ -174,6 +229,7 @@ $('#navbar li').on('click', function(){
         $(this).addClass('active');
     }
 });
+
 $('.mobile-handle').on('click', function(){
     $(this).toggleClass('active');
     $('#navbar .right').toggleClass('active');
@@ -211,8 +267,9 @@ $('.filter-parent-handle').on('click', function(){
     $(this).parent().toggleClass('active');
 });
 
-$('.partner-flex').on('click', function(){
-    $(this).toggleClass('active');
+$('.view-all-brand').on('click', function(){
+    console.log('asd');
+    $(this).parent().find('.partner-flex').toggleClass('active');
 });
 
 var tempVar;
