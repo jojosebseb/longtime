@@ -1,4 +1,4 @@
-$('.news-belt').slick({
+$('.news-belt.slick').slick({
     slidesToShow: 3,
     infinite: false,
     nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
@@ -7,7 +7,7 @@ $('.news-belt').slick({
   {
     breakpoint: 1025,
     settings: {
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1,
       infinite: true,
     //   dots: true
@@ -17,14 +17,18 @@ $('.news-belt').slick({
     breakpoint: 600,
     settings: {
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
     }
   },
   {
     breakpoint: 480,
     settings: {
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
     }
   }
   // You can unslick at a given breakpoint now by adding:
@@ -33,7 +37,7 @@ $('.news-belt').slick({
 ]
 });
 
-$('.latest-product-belt').slick({
+$('.latest-product-belt.slick').slick({
     slidesToShow: 5,
     slidesToScroll: 5,
     infinite: false,
@@ -43,7 +47,7 @@ $('.latest-product-belt').slick({
   {
     breakpoint: 1025,
     settings: {
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       infinite: true,
     //   dots: true
@@ -53,14 +57,14 @@ $('.latest-product-belt').slick({
     breakpoint: 600,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 1
+      slidesToScroll: 2
     }
   },
   {
     breakpoint: 480,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       dots: true,
       arrows: false,
     }
@@ -268,8 +272,14 @@ $('.filter-parent-handle').on('click', function(){
 });
 
 $('.view-all-brand').on('click', function(){
-    console.log('asd');
     $(this).parent().find('.partner-flex').toggleClass('active');
+    if ($(this).parent().find('.partner-flex').hasClass('active')) {
+        $(this).html('VIEW LESS');
+        console.log('asd');
+    }else {
+        $(this).html('VIEW ALL');
+        console.log('dsa');
+    }
 });
 
 var tempVar;
@@ -278,4 +288,13 @@ $('#productDetail .product-box img').on('click', function(){
     tempVar = $(this).attr('src');
     console.log(tempVar);
     $('#productDetail .product-preview img').attr('src', tempVar)
+});
+
+$('.expand-subcat').on('click', function(){
+    $(this).parent().toggleClass('active');
+    if ($(this).parent().hasClass('active')) {
+        $(this).html('-');
+    }else {
+        $(this).html('+');
+    }
 });

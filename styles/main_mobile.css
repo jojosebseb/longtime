@@ -25,6 +25,14 @@
   padding: 0 10px;
 }
 
+p {
+  padding-bottom: 15px;
+}
+
+.category_menu_list {
+  display: none !important;
+}
+
 .logo-container {
   padding-left: 15px;
   font-family: 'Baloo Da';
@@ -52,21 +60,24 @@
 
 .view-all-brand {
   margin: auto;
-  width: 100px;
+  width: 150px !important;
   display: block;
   text-align: center;
 }
 
 #navbar {
-  background-color: #006bb3;
+  background-color: #063350;
   padding: 15px 0;
-  border-bottom: 5px solid #ed1b24;
   color: white;
   font-family: ClearReg;
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 55;
+}
+
+#navbar .group {
+  display: flex;
 }
 
 #navbar .container {
@@ -93,7 +104,12 @@
 }
 
 #navbar .cart-button {
-  padding: 10px 0;
+  margin-right: 10px;
+}
+
+#navbar .cart-button a {
+  display: flex;
+  align-items: center;
 }
 
 #navbar .nav-input {
@@ -118,8 +134,8 @@
   position: relative;
   top: 15px;
   position: absolute;
-  top: 73px;
-  background: #061620;
+  top: 68px;
+  background: #063350;
   padding-bottom: 20px;
   display: none;
   left: 0;
@@ -149,6 +165,10 @@
   padding-right: 5px;
 }
 
+#navbar .top .cart-button {
+  display: none;
+}
+
 #navbar .bottom ul {
   display: flex;
   flex-wrap: wrap;
@@ -167,11 +187,11 @@
   padding: 0 20px;
   line-height: 40px;
   font-size: 14px;
+  text-align: center;
 }
 
 #navbar .bottom ul li .sub-menu {
   display: none;
-  padding-left: 10px;
   padding-bottom: 15px;
 }
 
@@ -198,9 +218,9 @@
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   border-top: 4px solid #fff;
-  position: absolute;
-  left: 90px;
-  top: 19px;
+  position: relative;
+  left: 8px;
+  top: 13px;
 }
 
 .has-submenu.active > :after {
@@ -211,9 +231,9 @@
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   border-bottom: 4px solid #fff;
-  position: absolute;
-  left: 90px;
-  top: 19px;
+  position: relative;
+  left: 8px;
+  top: -10px;
 }
 
 .mobile-handle {
@@ -267,8 +287,36 @@
 
 #parentContainer {
   position: relative;
-  padding-top: 73px;
   font-family: ClearReg;
+}
+
+#indexSlider {
+  position: relative;
+}
+
+#indexSlider .slider-timer {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  overflow: hidden;
+}
+
+#indexSlider .slider-timer .slider-bar {
+  height: 100%;
+  width: 0%;
+  background: red;
+}
+
+#indexSlider .slider-timer .slider-bar.empty {
+  width: 0%;
+}
+
+#indexSlider .slider-timer .slider-bar.full {
+  width: 100%;
 }
 
 #indexSlider .arrow-container.next {
@@ -372,7 +420,7 @@
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 18px;
   padding-bottom: 10px;
   font-family: ClearBold;
   text-transform: uppercase;
@@ -384,26 +432,39 @@
   width: 80%;
   margin: auto;
   text-align: center;
+  font-size: 14px;
 }
 
 #partnerSection {
   text-align: center;
-  padding: 40px 0;
+  padding: 0px 0 40px;
+}
+
+#partnerSection .container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+}
+
+#partnerSection .group {
+  width: 100%;
+  padding: 10px 0;
 }
 
 #partnerSection .partner-flex {
   display: flex;
   flex-wrap: wrap;
-  width: 280px;
-  margin: auto;
-  max-height: 140px;
+  width: 90vw;
+  justify-content: space-between;
+  margin: 10px auto;
+  max-height: 90vw;
   overflow: hidden;
 }
 
 #partnerSection .partner-flex .flex-module {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 30vw;
+  height: 30vw;
   transition: all .3s ease;
   cursor: pointer;
 }
@@ -494,11 +555,11 @@
 }
 
 #indexLatest .latest-product-belt .product-module {
-  margin: 0 5px;
+  margin: 5px 5px;
   width: 47%;
   border: 1px solid #ccc;
   font-family: ClearBold;
-  padding: 20px 15px 20px;
+  padding: 20px 10px 10px;
   border-radius: 3px;
   transition: all .3s ease;
 }
@@ -507,7 +568,7 @@
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
-  min-height: 160px;
+  height: 160px;
 }
 
 #indexLatest .latest-product-belt .product-module img {
@@ -531,6 +592,7 @@
 
 #indexLatest .latest-product-belt .product-module .product-brand {
   color: #ed1b24;
+  font-size: 12px;
 }
 
 #indexLatest .latest-product-belt .product-module .product-name {
@@ -538,12 +600,14 @@
   line-height: 14px;
   margin-top: 3px;
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 #indexLatest .latest-product-belt .product-module .product-sku {
   opacity: 0.5;
   margin: 5px 0 50px;
   font-size: 14px;
+  display: none;
 }
 
 #indexLatest .latest-product-belt .product-module:hover {
@@ -564,9 +628,11 @@
   color: white;
   background: #ed1b24;
   padding: 8px 15px;
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 3px;
   display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
@@ -600,14 +666,16 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 
 #indexNews .news-belt .news-module .news-image {
   overflow: hidden;
+  height: 160px;
 }
 
 #indexNews .news-belt .news-module img {
   display: block;
-  width: 100%;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
   transition: all .3s ease;
   position: relative;
-  transform: scale(1.1);
 }
 
 #indexNews .news-belt .news-module .news-title {
@@ -634,7 +702,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 
 #footer {
   margin-top: 100px;
-  background: #002b58;
+  background: #063350;
   border-top: 10px solid #ed1b24;
   position: relative;
 }
@@ -673,6 +741,8 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 #footer .floater {
   position: absolute;
   bottom: 100%;
+  width: 100%;
+  justify-content: center;
   display: flex;
   right: 0;
 }
@@ -857,7 +927,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 #productDetail .filter-group .filter-handle:after {
   content: "+";
   position: absolute;
-  right: 10px;
+  right: 5vw;
 }
 
 #productDetail .filter-group .filter-options {
@@ -877,7 +947,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 #productDetail .filter-group.active .filter-handle:after {
   content: "-";
   position: absolute;
-  right: 10px;
+  right: 5vw;
 }
 
 #productDetail .product-thumbnail {
@@ -1133,7 +1203,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 #productList .filter-group .filter-handle:after {
   content: "+";
   position: absolute;
-  right: 10px;
+  right: 5vw;
 }
 
 #productList .filter-group .filter-options {
@@ -1153,7 +1223,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 #productList .filter-group.active .filter-handle:after {
   content: "-";
   position: absolute;
-  right: 10px;
+  right: 5vw;
 }
 
 #productList .banner {
@@ -1197,6 +1267,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 #productList .product-module .image-container {
   height: 180px;
   overflow: hidden;
+  position: relative;
 }
 
 #productList .product-module .red-button, #productList .product-module .view-all-brand, #productList .product-module .view-product-button {
@@ -1215,9 +1286,14 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 }
 
 #productList .product-module img {
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: block;
   margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #productList .brand {
@@ -1226,8 +1302,90 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
 
 #productList .name {
   text-transform: uppercase;
-  margin-bottom: 30px;
   min-height: 50px;
+  word-break: break-word;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: 58.8px;
+  /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.filter-options li a {
+  display: inline-block;
+  width: 90%;
+}
+
+.filter-options li .expand-subcat {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  text-align: center;
+  line-height: 11px;
+  border-radius: 3px;
+  font-weight: normal !important;
+}
+
+.filter-options li .category_select_list {
+  display: none;
+}
+
+.filter-options li .category_select_list li {
+  position: relative;
+  padding: 3px 15px !important;
+}
+
+.filter-options li .category_select_list li:after {
+  content: "";
+  height: 8px;
+  width: 1px;
+  background: #aaa;
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 6px;
+}
+
+.filter-options li .category_select_list li:before {
+  content: "";
+  width: 8px;
+  height: 1px;
+  background: #aaa;
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 13px;
+}
+
+.filter-options li.active {
+  font-weight: bold;
+}
+
+.filter-options li.active .category_select_list {
+  font-weight: normal;
+  display: block;
+}
+
+.filter-options li.active .category_select_list a {
+  font-weight: normal;
+}
+
+.filter-options li:hover .category_select_list li {
+  position: relative;
+  text-decoration: none;
+}
+
+.filter-options li:hover .category_select_list li:hover {
+  text-decoration: underline;
 }
 
 #brand {
@@ -1242,12 +1400,12 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
   align-content: center;
   text-align: center;
   margin: 10px auto;
-  width: 280px;
+  width: 100%;
 }
 
 #brand .brand-flex .brand-module {
-  width: 140px;
-  height: 140px;
+  width: 33.3%;
+  height: 15vh;
   border: 1px solid #eee;
   position: relative;
   text-align: center;
@@ -1438,6 +1596,7 @@ a.red-button.added, a.added.view-all-brand, a.added.view-product-button {
   margin: auto;
   color: rgba(0, 0, 0, 0.86);
   text-align: justify;
+  font-size: 14px;
 }
 
 #newsDetail .paragraph img {
@@ -1565,8 +1724,9 @@ textarea {
 
 #vision .vision-flex {
   display: flex;
-  padding: 20px 0;
+  padding: 5px 0;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #vision .vision-flex .flex-module {
@@ -1574,10 +1734,11 @@ textarea {
   height: 210px;
   background: red;
   border-radius: 50%;
-  margin: 0 -10px;
+  margin: 10px;
   position: relative;
   transition: all .4s ease;
   color: white;
+  text-align: center;
 }
 
 #vision .vision-flex .flex-module .ring {
@@ -1612,7 +1773,6 @@ textarea {
 
 #vision .vision-flex .red {
   background: #ed1b24;
-  text-align: right;
 }
 
 #vision .vision-flex .blue {
@@ -1630,7 +1790,6 @@ textarea {
 
 #proposition {
   padding: 40px 0;
-  padding-bottom: 150px;
 }
 
 #proposition .section-title {
@@ -1643,16 +1802,19 @@ textarea {
   width: 100%;
   margin: auto;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 #proposition .flex .flex-module {
-  width: 33%;
-  padding: 10px;
+  width: 100%;
+  padding: 30px 10%;
+  text-align: center;
 }
 
 #proposition .flex .flex-module img {
   display: block;
-  padding-bottom: 20px;
+  margin: auto;
+  padding-bottom: 10px;
 }
 
 #proposition .flex .top {
@@ -1673,7 +1835,9 @@ textarea {
   width: 40px;
   border: 1px solid #ddd;
   position: absolute;
-  bottom: 9px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #proposition .flex .paragraph {
