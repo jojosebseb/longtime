@@ -32,6 +32,11 @@ p {
   padding-bottom: 10px;
 }
 
+.img-hide-desktop {
+  width: 100%;
+  display: none !important;
+}
+
 #jo-popup {
   position: fixed;
   top: 0;
@@ -113,7 +118,7 @@ p {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 55;
+  z-index: 555;
 }
 
 #navbar .container {
@@ -306,10 +311,14 @@ p {
 }
 
 #indexSlider {
+  display: none;
+}
+
+#indexSlider, #indexSlider2 {
   position: relative;
 }
 
-#indexSlider .slider-timer {
+#indexSlider .slider-timer, #indexSlider2 .slider-timer {
   z-index: 5;
   position: absolute;
   top: 0;
@@ -320,57 +329,58 @@ p {
   overflow: hidden;
 }
 
-#indexSlider .slider-timer .slider-bar {
+#indexSlider .slider-timer .slider-bar, #indexSlider2 .slider-timer .slider-bar {
   height: 100%;
   width: 0%;
   background: red;
 }
 
-#indexSlider .slider-timer .slider-bar.empty {
+#indexSlider .slider-timer .slider-bar.empty, #indexSlider2 .slider-timer .slider-bar.empty {
   width: 0%;
 }
 
-#indexSlider .slider-timer .slider-bar.full {
+#indexSlider .slider-timer .slider-bar.full, #indexSlider2 .slider-timer .slider-bar.full {
   width: 100%;
 }
 
-#indexSlider .arrow-container.next {
+#indexSlider .arrow-container.next, #indexSlider2 .arrow-container.next {
   right: 35px;
   background: rgba(255, 255, 255, 0.4);
 }
 
-#indexSlider .arrow-container.prev {
+#indexSlider .arrow-container.prev, #indexSlider2 .arrow-container.prev {
   left: 35px;
   background: rgba(255, 255, 255, 0.4);
 }
 
-#indexSlider .slide-items {
+#indexSlider .slide-items, #indexSlider2 .slide-items {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
+  width: 100%;
 }
 
-#indexSlider .container {
+#indexSlider .container, #indexSlider2 .container {
   background: transparent;
   position: relative;
   height: 55vh;
   width: 1100px;
 }
 
-#indexSlider .slide-img {
+#indexSlider .slide-img, #indexSlider2 .slide-img {
   position: absolute;
   transform: translate(-50%, -50%);
   max-width: 22vw;
 }
 
-#indexSlider .text-container {
+#indexSlider .text-container, #indexSlider2 .text-container {
   position: absolute;
   color: white;
   transform: translate(-50%, -50%);
 }
 
-#indexSlider .text-container .title {
+#indexSlider .text-container .title, #indexSlider2 .text-container .title {
   text-transform: uppercase;
   font-size: 38px;
   font-family: ClearBold;
@@ -380,14 +390,14 @@ p {
   display: inline-block;
 }
 
-#indexSlider .text-container .caption {
+#indexSlider .text-container .caption, #indexSlider2 .text-container .caption {
   width: 500px;
   font-size: 18px;
   padding: 15px 25px;
   background: rgba(0, 0, 0, 0.9);
 }
 
-#indexSlider .text-container .link-button {
+#indexSlider .text-container .link-button, #indexSlider2 .text-container .link-button {
   font-size: 18px;
   padding: 15px 25px;
   background: #f0802b;
@@ -397,7 +407,7 @@ p {
   position: relative;
 }
 
-#indexSlider .text-container .link-button:after {
+#indexSlider .text-container .link-button:after, #indexSlider2 .text-container .link-button:after {
   position: absolute;
   content: "";
   width: 90%;
@@ -410,47 +420,47 @@ p {
   transition: all .3s ease;
 }
 
-#indexSlider .text-container .link-button:hover:after {
+#indexSlider .text-container .link-button:hover:after, #indexSlider2 .text-container .link-button:hover:after {
   opacity: 1;
 }
 
-#indexSlider .hor-pos-1 {
+#indexSlider .hor-pos-1, #indexSlider2 .hor-pos-1 {
   left: 20%;
 }
 
-#indexSlider .hor-pos-2 {
+#indexSlider .hor-pos-2, #indexSlider2 .hor-pos-2 {
   left: 35%;
 }
 
-#indexSlider .hor-pos-3 {
+#indexSlider .hor-pos-3, #indexSlider2 .hor-pos-3 {
   left: 50%;
 }
 
-#indexSlider .hor-pos-4 {
+#indexSlider .hor-pos-4, #indexSlider2 .hor-pos-4 {
   left: 65%;
 }
 
-#indexSlider .hor-pos-5 {
+#indexSlider .hor-pos-5, #indexSlider2 .hor-pos-5 {
   left: 80%;
 }
 
-#indexSlider .vert-pos-1 {
+#indexSlider .vert-pos-1, #indexSlider2 .vert-pos-1 {
   top: 20%;
 }
 
-#indexSlider .vert-pos-2 {
+#indexSlider .vert-pos-2, #indexSlider2 .vert-pos-2 {
   top: 35%;
 }
 
-#indexSlider .vert-pos-3 {
+#indexSlider .vert-pos-3, #indexSlider2 .vert-pos-3 {
   top: 50%;
 }
 
-#indexSlider .vert-pos-4 {
+#indexSlider .vert-pos-4, #indexSlider2 .vert-pos-4 {
   top: 65%;
 }
 
-#indexSlider .vert-pos-5 {
+#indexSlider .vert-pos-5, #indexSlider2 .vert-pos-5 {
   top: 85%;
 }
 

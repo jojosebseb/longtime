@@ -35,6 +35,10 @@ $navbar-height: 84px;
 p{
     padding-bottom: 10px;
 }
+.img-hide-desktop{
+    width: 100%;
+    display: none !important;
+}
 #jo-popup{
     position: fixed;
     top: 0;
@@ -112,7 +116,7 @@ body{
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 55;
+    z-index: 555;
     .container{
         display: flex;
         justify-content: space-between;
@@ -289,6 +293,9 @@ body{
     }
 }
 #indexSlider{
+    display: none;
+}
+#indexSlider, #indexSlider2{
     position: relative;
     .slider-timer{
         z-index: 5;
@@ -327,6 +334,7 @@ body{
         background-position: center center;
         background-repeat: no-repeat;
         position: relative;
+        width: 100%;
     }
     .container{
         background: transparent;
