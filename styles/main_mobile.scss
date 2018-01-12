@@ -35,7 +35,9 @@ p{
 }
 //pallette
 
-
+.product-zoom{
+    display: none
+}
 //NAVBAR
 .category_menu_list{
     display: none !important;
@@ -90,6 +92,7 @@ p{
     .search-group{
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
     }
     .nav-drop{
         background: white;
@@ -220,6 +223,7 @@ p{
     position: relative;
     left: 8px;
     top: 13px;
+    display: none;
 }
 .has-submenu.active > :after{
     content: "";
@@ -232,6 +236,7 @@ p{
     position: relative;
     left: 8px;
     top: -10px;
+    display: none;
 }
 .mobile-handle{
     width: 30px;
@@ -284,6 +289,9 @@ p{
     font-family: ClearReg;
 }
 #indexSlider{
+    // display: none;
+}
+#indexSlider2{
     display: none;
 }
 #indexSlider, #indexSlider2{
@@ -329,7 +337,7 @@ p{
         background-repeat: no-repeat;
         position: relative;
         // background: none !important;
-        min-height: 200px;
+        min-height: 29vw;
         width: 100%;
     }
     .container{
@@ -437,7 +445,7 @@ p{
         display: flex;
         flex-wrap: wrap;
         width: 90vw;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin: 10px auto;
         max-height: 90vw;
         overflow: hidden;
@@ -555,10 +563,12 @@ p{
                 font-size: 12px;
             }
             .product-name{
-                min-height: 50px;
+                min-height: 43px;
                 line-height: 14px;
                 margin-top: 3px;
                 text-transform: uppercase;
+                overflow: hidden;
+                margin-bottom: 20px;
                 font-size: 14px;
             }
             .product-sku{
@@ -615,7 +625,7 @@ a.red-button.added {
             margin-bottom: 20px;
             .news-image{
                 overflow: hidden;
-                height: 160px;
+                // height: 160px;
             }
             img{
                 display: block;
@@ -632,11 +642,14 @@ a.red-button.added {
                 font-size: 25px;
                 text-transform: uppercase;
                 padding-top: 10px;
+                min-height: 60px;
             }
             .news-paragraph{
                 font-size: 14px;
                 line-height: 18px;
                 padding-top: 10px;
+                max-height: 84px;
+                overflow: hidden;
             }
         }
         .news-module:hover{
@@ -1655,6 +1668,8 @@ textarea{
             width: 100%;
             padding: 30px 10%;
             text-align: center;
+            max-width: 600px;
+            margin: auto;
             img{
                 display: block;
                 margin: auto;
@@ -1841,5 +1856,85 @@ ul.slick-dots {
     }
     li.slick-active{
         opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .img-hide-desktop{
+        display: none !important;
+    }
+    #partnerSection{
+        .partner-flex{
+            width: 80vw;
+            max-height: 40vw;
+            .flex-module{
+                width: 20vw;
+                height: 20vw;
+            }
+        }
+
+    }
+    #productDetail{
+        .product-thumbnail{
+            width: 60%;
+            margin: auto;
+            display: flex;
+            .product-grid {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                vertical-align: unset;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0 5px;
+                .product-box{
+                    width: 50px;
+                    height: 50px;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+        .product-preview{
+            width: 90%;
+            img{
+                display: block;
+                margin: auto;
+                width: auto;
+                max-height: 500px;
+                max-width: 100%;
+            }
+        }
+    }
+    #indexNews{
+        .news-belt{
+            justify-content: flex-start;
+            .news-module{
+                width: 33%;
+                padding: 0 5px;
+                .news-title{
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+    #brand{
+        .brand-flex{
+            // max-width: 900px;
+            justify-content: center;
+            .brand-module{
+                width: 180px;
+                height: 180px;
+            }
+        }
+        .brand-flex:after{
+            content: "";
+            width: 180px;
+            height: 180px;
+            display: block;
+        }
     }
 }

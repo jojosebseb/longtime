@@ -1,141 +1,11 @@
-$('.news-belt.slick').slick({
-    slidesToShow: 3,
-    infinite: false,
-    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
-    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
-    responsive: [
-  {
-    breakpoint: 1025,
-    settings: {
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      infinite: true,
-    //   dots: true
-    }
-  },
-  {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: true,
-      arrows: false,
-    }
-  },
-  {
-    breakpoint: 480,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: true,
-      arrows: false,
-    }
-  }
-  // You can unslick at a given breakpoint now by adding:
-  // settings: "unslick"
-  // instead of a settings object
-]
-});
+$(document).ready(function(){
 
-$('.latest-product-belt.slick').slick({
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    infinite: false,
-    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
-    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
-    responsive: [
-  {
-    breakpoint: 1025,
-    settings: {
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      infinite: true,
-    //   dots: true
-    }
-  },
-  {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2
-    }
-  },
-  {
-    breakpoint: 480,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      dots: true,
-      arrows: false,
-    }
-  }
-  // You can unslick at a given breakpoint now by adding:
-  // settings: "unslick"
-  // instead of a settings object
-]
-});
 
-$('.related-product-belt.slick').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    infinite: false,
-    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
-    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
-    responsive: [
-  {
-    breakpoint: 1025,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      infinite: true,
-      dots: true,
-      arrows: false,
-    }
-  },
-  {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      dots: true,
-      arrows: false,
-    }
-  },
-  {
-    breakpoint: 480,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      dots: true,
-      arrows: false,
-    }
-  }
-  // You can unslick at a given breakpoint now by adding:
-  // settings: "unslick"
-  // instead of a settings object
-]
-});
+
 
 var slideWidth = $('#indexSlider .slider-bar').width();
 
 var winWidth = $(window).width();
-
-console.log(
-    winWidth
-);
-
-console.log(slideWidth);
-// window.setInterval(function(){
-//     if (slideWidth >= winWidth) {
-//         slideWidth= 0;
-//     }
-//     else {
-//         $('#indexSlider .slider-bar').css({
-//             width: slideWidth+1 +'px'
-//         });
-//         slideWidth = $('#indexSlider .slider-bar').width();
-//     }
-// }, 100);
 
 function timer(){
     $('.slider-bar').animate({
@@ -154,16 +24,11 @@ function timerReset(){
 }
 timer();
 
-// window.setInterval(function(){
-//     $('.slider-bar').removeClass('full');
-//     $('.slider-bar').addClass('full');
-// }, 2000);
-
 $('#indexSlider > .slider-container').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    // fade: true,
+    fade: true,
     nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
     prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
     // autoplay: true,
@@ -297,4 +162,149 @@ $('.expand-subcat').on('click', function(){
     }else {
         $(this).html('+');
     }
+});
+$('.news-belt.slick').slick({
+    slidesToShow: 3,
+    infinite: false,
+    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
+    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
+    responsive: [
+  {
+    breakpoint: 1025,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+    //   dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
+});
+
+$('.latest-product-belt.slick').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    infinite: false,
+    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
+    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
+    responsive: [
+  {
+    breakpoint: 1025,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+    //   dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      dots: true,
+      arrows: false,
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
+});
+
+$('.related-product-belt.slick').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    nextArrow: '<div class="arrow-container next"><div class="arrow next"></div</div>',
+    prevArrow: '<div class="arrow-container prev"><div class="arrow prev"></div</div>',
+    responsive: [
+  {
+    breakpoint: 1025,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true,
+      arrows: false,
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
+});
+
+console.log('asd');
+var imgUrl, posX, posY;
+
+$('.product-preview').on('mouseenter', function(){
+    $('.product-zoom').addClass('active');
+    imgUrl = $(this).find('img').attr('src');
+    $('.product-zoom').css({
+        'background-image': 'url('+imgUrl+')'
+    });
+    $(this).on('mousemove', function(e){
+        var parentOffset = $(this).offset();
+        //or $(this).offset(); if you really just want the current element's offset
+        posX = e.pageX - parentOffset.left;
+        posY = e.pageY - parentOffset.top;
+        console.log(posX, posY);
+        $('.product-zoom').css({
+            'background-position': -(posX-50)+'px ' +-(posY-50)+'px' 
+        });
+    });
+    $(this).on('mouseleave', function(){
+        console.log(imgUrl);
+        $('.product-zoom').removeClass('active');
+    });
+});
+
+
 });
