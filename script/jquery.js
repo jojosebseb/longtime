@@ -295,13 +295,11 @@ $('.product-preview').on('mouseenter', function(){
         //or $(this).offset(); if you really just want the current element's offset
         posX = e.pageX - parentOffset.left;
         posY = e.pageY - parentOffset.top;
-        console.log(posX, posY);
         $('.product-zoom').css({
-            'background-position': -(posX-50)+'px ' +-(posY-50)+'px' 
+            'background-position': -(posX-50)+'px ' +-(posY-50)+'px'
         });
     });
-    $(this).on('mouseleave', function(){
-        console.log(imgUrl);
+    $(this).on('mouseleave', function(){        
         $('.product-zoom').removeClass('active');
     });
 });
